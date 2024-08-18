@@ -39,6 +39,8 @@ func main() {
 Below is a list of the projects included in this repository. Click on a project to view its specific details and code.
 
 - [Task Management Server](./task-management-server)
+- [TCP chat server](./tcp-chat)
+
 
 ---
 

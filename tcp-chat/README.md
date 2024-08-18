@@ -66,9 +66,72 @@ The project is organized into the following files:
 - **`command` Struct**: Encapsulates a command with its ID, client, and arguments.
 
 
-<!-- ## Running the Server
+## Running the Server
 
 1. Clone the repository:
    ```bash
-   git clone <>
-   cd <repository-directory> -->
+   git clone https://github.com/samyukthapeeyems/golearn/tree/main/tcp-chat
+   cd tcp-chat
+
+## Testing
+
+To test the chat server, you can use `telnet` to interact with the server and simulate client connections. Follow these steps:
+
+1. **Build and Run the Server**:
+
+   Open a terminal window and navigate to the project directory. Build and run the server with the following commands:
+   ```bash
+   go build .
+   ./tcp-chat
+
+    //output
+    2024/08/19 01:49:18 Started server on port 8888
+    2024/08/19 01:49:25 New client has connected: [::1]:38824
+    2024/08/19 01:49:29 New client has connected: [::1]:38838
+    2024/08/19 01:50:27 Client has disconnected: [::1]:38824
+    2024/08/19 01:50:32 Client has disconnected: [::1]:38838
+
+2. **Client x**:
+
+    Open another terminal window. Run the client with the following commands:
+   ```bash  
+    telnet localhost 8888
+
+    //output
+    Trying ::1...
+    Connected to localhost.
+    Escape character is '^]'.
+    /name John
+    > Nice! I will call you John
+    /join #general
+    > Welcome to the room #general!
+    > Jane has joined the room
+        /msg Hi everyone!
+    > Jane: Hey all!
+    /quit
+    > Sad to see you go :(  Bye...
+    Connection closed by foreign host.
+
+3. **Client y**:
+
+    Open another terminal window. Run another client with the following commands:
+   ```bash  
+    telnet localhost 8888
+
+    //output
+    Trying ::1...
+    Connected to localhost.
+    Escape character is '^]'.
+    /name Jane
+    > Nice! I will call you Jane
+    /rooms
+    > Available rooms are: #general
+    /join #general
+    > Welcome to the room #general!
+    > John: Hi everyone!
+    /msg Hey all!
+    > John has left the room
+    /quit
+    > Sad to see you go :(  Bye...
+    Connection closed by foreign host.
+
